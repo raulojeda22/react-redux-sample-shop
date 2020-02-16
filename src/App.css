@@ -1,26 +1,7 @@
 * { margin: 0; padding: 0;}
 
-body, html { height:100%; }
-
-#canvas {
-    position:absolute;
-    width:100%;
+body, html {
     height:100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.header {
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    flex: 30%;
-}
-
-.header #nav {
-    flex: 10%;
-    margin: 0px;
-    padding: 0px;
-}
-
-h2 {
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-}

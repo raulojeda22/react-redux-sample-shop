@@ -1,0 +1,21 @@
+.duck {
+    display: flex;
+    flex-direction: column;
+}
+
+.duck .info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.duck .info .actions {
+    align-self: center;
+}
+
+button {
+    border-radius: 20%;
+    padding: 5px;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}

@@ -3,6 +3,8 @@ import './App.css';
 import { Route, Link, Switch } from "react-router-dom";
 import { connect } from 'react-redux';
 import { duckActions } from './actions';
+import Header from './components/Header/Header';
+import DuckList from './components/DuckList/DuckList';
 import 'react-toastify/dist/ReactToastify.css';
 
 class App extends Component {
@@ -17,14 +19,10 @@ class App extends Component {
     console.log(this.props.duckList);
     return (
       <div>
-        { this.props.duckList && this.props.duckList.map((duck, index) =>
-          <div key={duck.id}>
-            <img width="250px" height="250px" src={"/images/" + duck.image}></img>
-            <h4>{duck.name}</h4>
-            <h3>{duck.price}<small><sup>€</sup></small></h3>
-            <button value={duck.id} onClick={this.addToCart}>Cart</button>
-          </div>
-        )}
+        <Header />
+        <div id="content">
+          <DuckList duckList={this.props.duckList}/>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,62 @@
+.header {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header h1 {
+    flex: 30%;
+}
+
+.header #nav {
+    flex: 10%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.header h2 {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+a {
+    color: grey;
+    text-decoration: none;
+}
+
+h1>a {
+    color: rgb(219, 197, 0);
+}
+
+h2 {
+    color:#dbc500;
+}
+
+a:hover {
+    color: rgb(219, 197, 0);
+}
+
+a:active {
+    color: rgb(219, 197, 0);
+}
+
+#nav {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.header {
+    background-color: #353535;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: rgb(219, 197, 0);
+    padding-left: 15px;
+    padding-right: 15px;
+}

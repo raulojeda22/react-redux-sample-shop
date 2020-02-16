@@ -7,7 +7,7 @@ class DuckList extends Component {
         return (
             <div id="duckList">
                 { this.props.duckList && this.props.duckList.map((duck, index) =>
-                    <Duck duck={duck} />
+                    <Duck key={index} duck={duck} />
                 )}
             </div>
         )

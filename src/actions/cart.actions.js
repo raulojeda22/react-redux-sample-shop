@@ -6,11 +6,11 @@ export const cartActions = {
     add
 };
 
-function add() {
+function add(duckId) {
     return dispatch => {
-        dispatch(request());
+        dispatch(request(duckId));
 
-        cartService.add()
+        cartService.add(duckId)
             .then(
                 value => {
                     dispatch(success(value));

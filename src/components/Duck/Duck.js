@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Duck.css';
+import { cartActions } from '../../actions';
 
 class Duck extends Component {
+    constructor(params) {
+        super(params);
+        this.addToCart = this.addToCart.bind(this);
+    }
+    addToCart(e) {
+        console.log(e.target.value);
+        console.log(this.props);
+        this.props.addToCart(e.target.value);
+    }
     render() {
         let duck = this.props.duck;
         return (
@@ -23,4 +34,14 @@ class Duck extends Component {
     }
 }
 
-export default Duck;
+function mapState(state) {
+    const { alert } = state;
+    return { alert };
+}
+
+const actionCreators = {
+    addToCart: cartActions.add
+};
+
+const connectedDuck = connect(mapState, actionCreators)(Duck)
+export default connectedDuck;

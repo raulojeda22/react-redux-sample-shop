@@ -12,9 +12,6 @@ class App extends Component {
     super(props);
     this.props.list();
   }
-  addToCart(e) {
-    console.log(e.target.value);
-  }
   render() {
     console.log(this.props.duckList);
     return (
@@ -36,8 +33,7 @@ function mapState(state) {
 }
 
 const actionCreators = {
-  list: duckActions.list,
-  //addToCart: cartActions.add
+  list: duckActions.list
 };
 
 const connectedApp = connect(mapState, actionCreators)(App)

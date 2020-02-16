@@ -1,0 +1,148 @@
+{
+    "ducks": [
+        {
+            "id": 0,
+            "name": "Donald",
+            "price": 35,
+            "image": "donald.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Lucas",
+            "price": 3,
+            "image": "lucas.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Daffy",
+            "price": 12,
+            "image": "daffy.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Huey",
+            "price": 5,
+            "image": "huey.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Dewey",
+            "price": 52,
+            "image": "dewey.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Louie",
+            "price": 90,
+            "image": "louie.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Cheese and Quackers",
+            "price": 15,
+            "image": "cheeseAndQuackers.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Firequacker",
+            "price": 50,
+            "image": "firequacker.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Sir Quacks a Lot",
+            "price": 100,
+            "image": "sirQuacksALot.jpeg"
+        },
+        {
+            "id": 9,
+            "name": "Ducky Jr",
+            "price": 11,
+            "image": "duckyJr.jpeg"
+        },
+        {
+            "id": 10,
+            "name": "Moby Duck",
+            "price": 80,
+            "image": "mobyDuck.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Waddles",
+            "price": 16,
+            "image": "waddles.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Quackie Chan",
+            "price": 60,
+            "image": "quackieChan.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Quack Sparrow",
+            "price": 45,
+            "image": "quackSparrow.jpg"
+        },
+        {
+            "id": 14,
+            "name": "James Pond",
+            "price": 77,
+            "image": "jamesPond.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Duck Norris",
+            "price": 95,
+            "image": "duckNorris.png"
+        },
+        {
+            "id": 16,
+            "name": "Aflac",
+            "price": 7,
+            "image": "aflac.jpg"
+        },
+        {
+            "id": 17,
+            "name": "Eggbert",
+            "price": 10,
+            "image": "eggBert.jpeg"
+        },
+        {
+            "id": 18,
+            "name": "Feather",
+            "price": 8,
+            "image": "feather.jpg"
+        },
+        {
+            "id": 19,
+            "name": "Duckanan",
+            "price": 130,
+            "image": "duckanan.jpg"
+        },
+        {
+            "id": 20,
+            "name": "Wolfgang Duck",
+            "price": 60,
+            "image": "wolfgangDuck.jpg"
+        },
+        {
+            "id": 21,
+            "name": "Lucky Duck",
+            "price": 200,
+            "image": "luckyDuck.jpeg"
+        },
+        {
+            "id": 22,
+            "name": "Quackula",
+            "price": 40,
+            "image": "quackula.jpg"
+        },
+        {
+            "id": 23,
+            "name": "Golduck",
+            "price": 500,
+            "image": "golduck.jpeg"
+        }
+    ]
+}

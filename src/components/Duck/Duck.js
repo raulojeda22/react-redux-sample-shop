@@ -24,7 +24,7 @@ class Duck extends Component {
                         <h3>{duck.price}<small><sup>€</sup></small></h3>
                     </div>
                     <div className="actions">
-                        <button value={duck.id} onClick={this.addToCart}>Cart</button>
+                        <button value={duck.id} onClick={(e) => this.addToCart(e)}>Cart</button>
                     </div>
                 </div>
             </div>

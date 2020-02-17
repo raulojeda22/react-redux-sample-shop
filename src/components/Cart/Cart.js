@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { cartActions } from '../../actions';
 import { connect } from 'react-redux';
+import { CartDefaultContext } from '../../helpers';
 import './Cart.css';
 
 class Cart extends Component {
@@ -10,6 +11,7 @@ class Cart extends Component {
         this.removeFromCart = this.removeFromCart.bind(this);
         this.props.getCart();
     }
+    static contextType = CartDefaultContext;
     addToCart(e) {
         this.props.addToCart(e.target.value);
     }
@@ -30,15 +32,15 @@ class Cart extends Component {
                     <div className="item" key={index}>
                         <div className="image"><img alt={item.name} width="50px" height="50px" src={"/images/" + item.image}></img></div>
                         <div className="name">{item.name}</div>
-                        <div style={{display: "flex", justifyContent: "end", alignItems: "center"}}className="total"><button style={{marginRight: "0.5em"}} className="remove" value={item.id} onClick={this.removeFromCart}>-</button>{item.total}<button style={{marginLeft: "0.5em"}} value={item.id} onClick={this.addToCart}>+</button></div>
                         <div className="price">{item.price}<small><sup>€</sup></small></div>
+                        <div style={{display: "flex", justifyContent: "end", alignItems: "center"}}className="total"><button style={{marginRight: "0.5em"}} className="remove" value={item.id} onClick={this.removeFromCart}>-</button>{item.total}<button style={{marginLeft: "0.5em"}} value={item.id} onClick={this.addToCart}>+</button></div>
                         <div className="totalPrice">{item.total * item.price}<small><sup>€</sup></small></div>
                         <div style={{display: "none"}}>{totalPrice += item.total * item.price}</div>
                     </div>
                 )
                 }
                 {
-                    cartList.length <= 0 && <h2>Empty</h2>
+                    cartList.length <= 0 && <h2>{this.context}</h2>
                 }
                 </div>
                 <div style={{marginBottom: "50px"}} className="result">

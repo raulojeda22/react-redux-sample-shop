@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 
 class Nothing extends Component {
     render() {
         return (
-            <div>
-                <h2>Nothing here</h2>
-                <Link to="/">Home</Link>
+            <div style={{textAlign: "center", marginTop: "50px"}}>
+                <h2 style={{marginBottom: "50px"}}>Nothing here</h2>
             </div>
         );
     }

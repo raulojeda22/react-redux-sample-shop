@@ -35,7 +35,11 @@ class Cart extends Component {
                         <div className="totalPrice">{item.total * item.price}<small><sup>€</sup></small></div>
                         <div style={{display: "none"}}>{totalPrice += item.total * item.price}</div>
                     </div>
-                )}
+                )
+                }
+                {
+                    cartList.length <= 0 && <h2>Empty</h2>
+                }
                 </div>
                 <div style={{marginBottom: "50px"}} className="result">
                     <div style={{marginRight: "20px"}}>Total <span>{totalPrice}<small><sup>€</sup></small></span></div>

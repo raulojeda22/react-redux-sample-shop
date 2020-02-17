@@ -9,8 +9,6 @@ class Duck extends Component {
         this.addToCart = this.addToCart.bind(this);
     }
     addToCart(e) {
-        console.log(e.target.value);
-        console.log(this.props);
         this.props.addToCart(e.target.value);
     }
     render() {

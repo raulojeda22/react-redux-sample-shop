@@ -1,40 +1,26 @@
 import React, {Component} from 'react';
 import './App.css';
-import { Route, Link, Switch } from "react-router-dom";
-import { connect } from 'react-redux';
-import { duckActions } from './actions';
+import { Route, Switch } from "react-router-dom";
 import Header from './components/Header/Header';
-import DuckList from './components/DuckList/DuckList';
+import Nothing from './components/Nothing/Nothing.js';
+import Home from './components/Home/Home.js';
+import Cart from './components/Cart/Cart.js';
 import 'react-toastify/dist/ReactToastify.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.props.list();
-  }
   render() {
     console.log(this.props.duckList);
     return (
       <div>
         <Header />
-        <div id="content">
-          <DuckList duckList={this.props.duckList}/>
-        </div>
+        <Switch>
+          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/cart" component={Cart}></Route>
+          <Route component={Nothing} />
+        </Switch>
       </div>
     );
   }
 }
 
-function mapState(state) {
-  const { alert, duck } = state;
-  const { list } = duck;
-  const { duckList } = state.duck;
-  return { alert, list, duckList};
-}
-
-const actionCreators = {
-  list: duckActions.list
-};
-
-const connectedApp = connect(mapState, actionCreators)(App)
-export default connectedApp;
+export default App;

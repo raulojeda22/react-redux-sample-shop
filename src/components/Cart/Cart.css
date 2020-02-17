@@ -1,0 +1,40 @@
+#cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cart .items {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#cart .item {
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+#cart .result {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#cart .item .image {
+    flex: 10%;
+}
+#cart .item .name {
+    flex: 50%;
+}
+#cart .item .total {
+    flex: 20%;
+}
+#cart .item .price {
+    flex: 10%;
+}
+#cart .item .totalPrice {
+    flex: 10%;
+}

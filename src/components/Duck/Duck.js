@@ -25,14 +25,16 @@ class Duck extends Component {
                         <h3>{duck.price}<small><sup>€</sup></small></h3>
                     </div>
                     <div className="actions">
-                        <button value={duck.id} onClick={(e) => this.addToCart(e)}>Cart</button>
+                        <button value={duck.id} onClick={(e) => this.addToCart(e)}>Cart</button> {/* Different types of calls to events */}
                     </div>
                 </div>
             </div>
         )
     }
 }
-
+/**
+ * Default values on properties
+ */
 Duck.defaultProps = {
     duck: {
         id: 0,
@@ -41,7 +43,9 @@ Duck.defaultProps = {
         price: 100
     }
 };
-
+/**
+ * Restrictions to properties
+ */
 Duck.propTypes = {
     duck: PropTypes.shape({
         id: PropTypes.number.isRequired,

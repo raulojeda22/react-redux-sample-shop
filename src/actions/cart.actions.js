@@ -9,6 +9,11 @@ export const cartActions = {
     order
 };
 
+/**
+ * Adds a duck to the cart by Id
+ *
+ * @param {int} duckId
+ */
 function add(duckId) {
     return dispatch => {
         dispatch(request(duckId));
@@ -32,6 +37,11 @@ function add(duckId) {
     function failure(error) { return { type: cartConstants.ADD_CART_FAILURE, error } }
 }
 
+/**
+ * Removes a duck from the cart by Id
+ *
+ * @param {int} duckId
+ */
 function remove(duckId) {
     return dispatch => {
         dispatch(request(duckId));
@@ -55,6 +65,9 @@ function remove(duckId) {
     function failure(error) { return { type: cartConstants.REMOVE_CART_FAILURE, error } }
 }
 
+/**
+ * Gets the content of the cart
+ */
 function get() {
     return dispatch => {
         dispatch(request());
@@ -79,6 +92,13 @@ function get() {
     function failure(error) { return { type: cartConstants.GET_CART_FAILURE, error } }
 }
 
+/**
+ * Creates an order with the content of the cart
+ *
+ * @param {string} name
+ * @param {string} address
+ * @param {string} cardNumber
+ */
 function order(name, address, cardNumber) {
     return dispatch => {
         dispatch(request({name, address, cardNumber}));

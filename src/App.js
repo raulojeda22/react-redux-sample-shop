@@ -9,13 +9,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import { CartDefaultContext } from './helpers';
 import Checkout from './components/Checkout/Checkout.js';
 
+/**
+ * Main application
+ */
 class App extends Component {
   render() {
     console.log(this.props.duckList);
     return (
       <div>
         <Header />
-        <CartDefaultContext.Provider value="Empty">
+        <CartDefaultContext.Provider value="Empty"> {/* Context provider */}
           <Switch>
             <Route exact path="/" component={Home}></Route>
               <Route exact path="/cart" component={Cart}></Route>

@@ -14,16 +14,31 @@ class Cart extends Component {
         this.componentWillUnmount = this.componentWillUnmount.bind(this);
         this.props.getCart();
     }
-    static contextType = CartDefaultContext;
+    static contextType = CartDefaultContext; //React context
+    /**
+     * Lifecycle method. Displays an alert when the component mounts
+     */
     componentDidMount() {
         this.props.success("Cart Component Did Mount");
     }
+    /**
+     * Lifecycle method. Displays an alert when the component unmounts
+     */
     componentWillUnmount() {
         this.props.success("Cart Component Will Unmount");
     }
+    /**
+     * Adds element to cart
+     *
+     * @param {event} e
+     */
     addToCart(e) {
         this.props.addToCart(e.target.value);
     }
+    /**
+     * Removes element from cart
+     * @param {event} e
+     */
     removeFromCart(e) {
         this.props.removeFromCart(e.target.value);
     }
@@ -31,13 +46,13 @@ class Cart extends Component {
         console.log(this.props.cartList);
         let cartList = [];
         for (let item in this.props.cartList) {
-            cartList.push(this.props.cartList[item]);
+            cartList.push(this.props.cartList[item]); //Creates an array from the cartList elements to be able to map through it
         }
         let totalPrice = 0;
         return (
             <div id="cart">
-                <div style={{marginTop: "50px", marginBottom: "20px"}} className="items">
-                { cartList.length > 0 && cartList.map((item, index) =>
+                <div style={{marginTop: "50px", marginBottom: "20px"}} className="items"> {/* Css on different components using the style attribute */}
+                { cartList.length > 0 && cartList.map((item, index) => /* map on the render */
                     <div className="item" key={index}>
                         <div className="image"><img alt={item.name} width="50px" height="50px" src={"/images/" + item.image}></img></div>
                         <div className="name">{item.name}</div>
@@ -55,7 +70,7 @@ class Cart extends Component {
                     </div>
                 )}
                 {
-                    cartList.length <= 0 && <h2 style={{margin: "0 auto"}}>{this.context}</h2>
+                    cartList.length <= 0 && <h2 style={{margin: "0 auto"}}>{this.context}</h2> //Context usage for displaying the word empty when there aren't no elements on the cart
                 }
             </div>
         )

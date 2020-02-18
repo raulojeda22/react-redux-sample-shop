@@ -6,6 +6,9 @@ export const duckActions = {
     list
 };
 
+/**
+ * Gets the list of ducks
+ */
 function list() {
     return dispatch => {
         dispatch(request());

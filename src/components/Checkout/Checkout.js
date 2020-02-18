@@ -5,7 +5,7 @@ import { cartActions } from '../../actions';
 class Checkout extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = { //Usage of the state for the form
             name: '',
             address: '',
             cardNumber: '',
@@ -33,7 +33,7 @@ class Checkout extends Component {
         return (
             <div id="checkout">
                 <h2 style={{textAlign: "center"}}>Checkout</h2>
-                <form style={{textAlign: "center"}} onSubmit={this.handleSubmit}>
+                <form style={{textAlign: "center"}} onSubmit={this.handleSubmit}> {/* Form on the checkout */}
                     <div className="name">
                         <input type="text" placeholder="Name" name="name" value={name} onChange={this.handleChange} />
                         {submitted && !name &&

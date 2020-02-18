@@ -6,8 +6,8 @@ class DuckList extends Component {
     render() {
         return (
             <div id="duckList">
-                { this.props.duckList && this.props.duckList.map((duck, index) =>
-                    <Duck key={index} duck={duck} />
+                { this.props.duckList && this.props.duckList.map((duck, index) => // Only goes through each duck on the list if the list isn't undefined
+                    <Duck key={index} duck={duck} /> //Use of props
                 )}
             </div>
         )

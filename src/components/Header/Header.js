@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
+/**
+ * Component without using the the word class
+ */
 function Header() {
     return (
         <header className="header">

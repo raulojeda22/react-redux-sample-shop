@@ -11,11 +11,21 @@ export const cartService = {
     order
 };
 
+function checkCart() {
+    if (!cart) {
+        JSON.parse(localStorage.getItem('cart'));
+    }
+    if (!ducks) {
+        ducks = JSON.parse(localStorage.getItem('ducks'));
+    }
+}
+
 function get() {
     return Promise.resolve(cart);
 }
 
 function add(duckId) {
+    checkCart();
     if (cart[duckId] == null) {
         cart[duckId] = ducks.filter(duck => {
             return duck.id === parseInt(duckId);
@@ -29,6 +39,7 @@ function add(duckId) {
 }
 
 function remove(duckId) {
+    checkCart();
     if (cart[duckId] !== null && cart[duckId].total !== 0) {
         cart[duckId].total--;
         if (cart[duckId].total === 0) {

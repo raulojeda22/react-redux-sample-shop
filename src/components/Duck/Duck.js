@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Duck.css';
 import { cartActions } from '../../actions';
+import PropTypes from 'prop-types';
 
 class Duck extends Component {
     constructor(params) {
@@ -30,6 +31,24 @@ class Duck extends Component {
             </div>
         )
     }
+}
+
+Duck.defaultProps = {
+    duck: {
+        id: 0,
+        name: 'Duck',
+        image: 'duckyJr.jpeg',
+        price: 100
+    }
+};
+
+Duck.propTypes = {
+    duck: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired
+    }).isRequired
 }
 
 function mapState(state) {

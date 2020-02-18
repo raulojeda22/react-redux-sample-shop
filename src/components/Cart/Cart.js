@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
-import { cartActions } from '../../actions';
+import { cartActions, alertActions } from '../../actions';
 import { connect } from 'react-redux';
 import { CartDefaultContext } from '../../helpers';
 import './Cart.css';
+import { Link } from "react-router-dom";
 
 class Cart extends Component {
     constructor(params) {
         super(params);
         this.addToCart = this.addToCart.bind(this);
         this.removeFromCart = this.removeFromCart.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
+        this.componentWillUnmount = this.componentWillUnmount.bind(this);
         this.props.getCart();
     }
     static contextType = CartDefaultContext;
+    componentDidMount() {
+        this.props.success("Cart Component Did Mount");
+    }
+    componentWillUnmount() {
+        this.props.success("Cart Component Will Unmount");
+    }
     addToCart(e) {
         this.props.addToCart(e.target.value);
     }
@@ -37,16 +46,17 @@ class Cart extends Component {
                         <div className="totalPrice">{item.total * item.price}<small><sup>€</sup></small></div>
                         <div style={{display: "none"}}>{totalPrice += item.total * item.price}</div>
                     </div>
-                )
-                }
+                )}
+                </div>
+                { cartList.length > 0 && (
+                    <div style={{marginBottom: "50px"}} className="result">
+                        <div style={{marginRight: "20px"}}>Total <span>{totalPrice}<small><sup>€</sup></small></span></div>
+                        <Link to="/checkout"><button>Checkout</button></Link>
+                    </div>
+                )}
                 {
-                    cartList.length <= 0 && <h2>{this.context}</h2>
+                    cartList.length <= 0 && <h2 style={{margin: "0 auto"}}>{this.context}</h2>
                 }
-                </div>
-                <div style={{marginBottom: "50px"}} className="result">
-                    <div style={{marginRight: "20px"}}>Total <span>{totalPrice}<small><sup>€</sup></small></span></div>
-                    <button>Checkout</button>
-                </div>
             </div>
         )
     }
@@ -61,7 +71,8 @@ function mapState(state) {
 const actionCreators = {
     addToCart: cartActions.add,
     removeFromCart: cartActions.remove,
-    getCart: cartActions.get
+    getCart: cartActions.get,
+    success: alertActions.success
 };
 
 const connectedCart = connect(mapState, actionCreators)(Cart)

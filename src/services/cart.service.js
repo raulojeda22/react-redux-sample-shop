@@ -7,7 +7,8 @@ if (!cart) {
 export const cartService = {
     get,
     add,
-    remove
+    remove,
+    order
 };
 
 function get() {
@@ -36,4 +37,10 @@ function remove(duckId) {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     return Promise.resolve(duckId);
+}
+
+function order(name, address, cardNumber) {
+    cart = {};
+    localStorage.setItem('cart', JSON.stringify(cart));
+    return Promise.resolve({name, address, cardNumber});
 }

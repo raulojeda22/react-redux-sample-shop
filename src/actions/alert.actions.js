@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 
 toast.configure({
     position: toast.POSITION.BOTTOM_RIGHT,
+    autoClose: 1500
 });
 
 export const alertActions = {

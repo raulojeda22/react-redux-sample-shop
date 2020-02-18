@@ -5,7 +5,8 @@ import { alertActions } from './';
 export const cartActions = {
     add,
     remove,
-    get
+    get,
+    order
 };
 
 function add(duckId) {
@@ -76,4 +77,28 @@ function get() {
     function request(value) { return { type: cartConstants.GET_CART_REQUEST, value } }
     function success(value) { return { type: cartConstants.GET_CART_SUCCESS, value } }
     function failure(error) { return { type: cartConstants.GET_CART_FAILURE, error } }
+}
+
+function order(name, address, cardNumber) {
+    return dispatch => {
+        dispatch(request({name, address, cardNumber}));
+
+        cartService.order(name, address, cardNumber)
+            .then(
+                value => {
+                    console.log(value);
+                    dispatch(success(value));
+                    dispatch(alertActions.success("Ducks ordered"))
+                },
+                error => {
+                    console.log(error);
+                    dispatch(failure(error.toString()));
+                    dispatch(alertActions.error(error.toString()));
+                }
+            );
+    };
+
+    function request(value) { return { type: cartConstants.ORDER_CART_REQUEST, value } }
+    function success(value) { return { type: cartConstants.ORDER_CART_SUCCESS, value } }
+    function failure(error) { return { type: cartConstants.ORDER_CART_FAILURE, error } }
 }

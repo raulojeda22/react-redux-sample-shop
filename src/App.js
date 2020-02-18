@@ -7,6 +7,7 @@ import Home from './components/Home/Home.js';
 import Cart from './components/Cart/Cart.js';
 import 'react-toastify/dist/ReactToastify.css';
 import { CartDefaultContext } from './helpers';
+import Checkout from './components/Checkout/Checkout.js';
 
 class App extends Component {
   render() {
@@ -14,13 +15,14 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Switch>
-          <Route exact path="/" component={Home}></Route>
-          <CartDefaultContext.Provider value="Empty">
-            <Route exact path="/cart" component={Cart}></Route>
-          </CartDefaultContext.Provider>
-          <Route component={Nothing} />
-        </Switch>
+        <CartDefaultContext.Provider value="Empty">
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+              <Route exact path="/cart" component={Cart}></Route>
+            <Route exact path="/checkout" component={Checkout}></Route>
+            <Route component={Nothing} />
+          </Switch>
+        </CartDefaultContext.Provider>
       </div>
     );
   }

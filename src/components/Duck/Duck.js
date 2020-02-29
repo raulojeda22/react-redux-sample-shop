@@ -17,7 +17,7 @@ class Duck extends Component {
         return (
             <div className="duck" key={duck.id}>
                 <div className="image">
-                    <img alt={duck.name} width="250px" height="250px" src={"react-redux-sample-shop/images/" + duck.image}></img>
+                    <img alt={duck.name} width="250px" height="250px" src={"/react-redux-sample-shop/images/" + duck.image}></img>
                 </div>
                 <div className="info">
                     <div className="data">

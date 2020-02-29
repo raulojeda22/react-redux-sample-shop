@@ -54,7 +54,7 @@ class Cart extends Component {
                 <div style={{marginTop: "50px", marginBottom: "20px"}} className="items"> {/* Css on different components using the style attribute */}
                 { cartList.length > 0 && cartList.map((item, index) => /* map on the render */
                     <div className="item" key={index}>
-                        <div className="image"><img alt={item.name} width="50px" height="50px" src={"react-redux-sample-shop/images/" + item.image}></img></div>
+                        <div className="image"><img alt={item.name} width="50px" height="50px" src={"/react-redux-sample-shop/images/" + item.image}></img></div>
                         <div className="name">{item.name}</div>
                         <div className="price">{item.price}<small><sup>€</sup></small></div>
                         <div style={{display: "flex", justifyContent: "end", alignItems: "center"}}className="total"><button style={{marginRight: "0.5em"}} className="remove" value={item.id} onClick={this.removeFromCart}>-</button>{item.total}<button style={{marginLeft: "0.5em"}} value={item.id} onClick={this.addToCart}>+</button></div>
@@ -66,7 +66,7 @@ class Cart extends Component {
                 { cartList.length > 0 && (
                     <div style={{marginBottom: "50px"}} className="result">
                         <div style={{marginRight: "20px"}}>Total <span>{totalPrice}<small><sup>€</sup></small></span></div>
-                        <Link to="/checkout"><button>Checkout</button></Link>
+                        <Link to="/react-redux-sample-shop/checkout"><button>Checkout</button></Link>
                     </div>
                 )}
                 {

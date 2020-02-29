@@ -24,7 +24,7 @@ class Checkout extends Component {
         const { name, address, cardNumber } = this.state;
         if (name && address && cardNumber) {
             this.props.order(name, address, cardNumber);
-            this.props.history.push('/');
+            this.props.history.push('/react-redux-sample-shop');
         }
     }
     render() {

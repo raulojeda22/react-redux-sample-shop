@@ -8,10 +8,10 @@ import './Header.css';
 function Header() {
     return (
         <header className="header">
-            <h1><Link to="/">Patotienda</Link></h1>
+            <h1><Link to="/react-redux-sample-shop">Patotienda</Link></h1>
             <ul id="nav">
-                <li><h2><Link to="/">Home</Link></h2></li>
-                <li><h2><Link to="/cart">Cart</Link></h2></li>
+                <li><h2><Link to="/react-redux-sample-shop">Home</Link></h2></li>
+                <li><h2><Link to="/react-redux-sample-shop/cart">Cart</Link></h2></li>
             </ul>
         </header>
     )

@@ -20,9 +20,9 @@ class App extends Component {
         <Header />
         <CartDefaultContext.Provider value="Empty"> {/* Context provider */}
           <Switch>
-            <Route exact path="/" component={Home}></Route>
-              <Route exact path="/cart" component={Cart}></Route>
-            <Route exact path="/checkout" component={Checkout}></Route>
+            <Route exact path="/react-redux-sample-shop" component={Home}></Route>
+              <Route exact path="/react-redux-sample-shop/cart" component={Cart}></Route>
+            <Route exact path="/react-redux-sample-shop/checkout" component={Checkout}></Route>
             <Route component={Nothing} />
           </Switch>
         </CartDefaultContext.Provider>
